@@ -1,4 +1,4 @@
-package com.example;
+package com.foundryhelper;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -16,13 +16,13 @@ import net.runelite.client.plugins.PluginDescriptor;
 @PluginDescriptor(
 	name = "Example"
 )
-public class ExamplePlugin extends Plugin
+public class FoundryHelperPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private FoundryHelperConfig config;
 
 	@Override
 	protected void startUp() throws Exception
@@ -46,8 +46,8 @@ public class ExamplePlugin extends Plugin
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	FoundryHelperConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(FoundryHelperConfig.class);
 	}
 }
